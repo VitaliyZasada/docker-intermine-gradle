@@ -25,8 +25,8 @@ RUN apk upgrade --update && \
 RUN apk del curl && \
     rm -rf /tmp/* /var/cache/apk/*
 
-COPY ./configs/* /opt/tomcat/conf/
-COPY ./configs/web_context.xml /opt/tomcat/webapps/manager/META-INF/context.xml
+COPY ./tomcat/configs/* /opt/tomcat/conf/
+COPY ./tomcat/configs/web_context.xml /opt/tomcat/webapps/manager/META-INF/context.xml
 
 ENV JAVA_OPTS="-Xmx500m -Xms256m"
 WORKDIR /opt/tomcat
