@@ -26,14 +26,14 @@ services:
 
   postgres:
     container_name: intermine_postgres
-    image: intermine/postgres:latest
+    image: vitaliyvar/intermine_postgres:latest
     user: ${UID:-1000}:${GID:-1000}
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
 
   solr:
     container_name: intermine_solr
-    image: intermine/solr
+    image: vitaliyvar/intermine_solr:latest
     environment:
       - MEM_OPTS=${MEM_OPTS:-"-Xmx2g -Xms1g"}
       - MINE_NAME=${MINE_NAME:-biotestmine}
@@ -43,7 +43,7 @@ services:
 
   tomcat:
     container_name: intermine_tomcat
-    image: intermine/tomcat
+    image: vitaliyvar/intermine_tomcat:latest
     environment:
       - MEM_OPTS=${MEM_OPTS:-"-Xmx1g -Xms500m"}
     ports:
