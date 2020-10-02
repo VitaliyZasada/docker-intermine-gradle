@@ -1,9 +1,9 @@
 FROM postgres:9.3
 LABEL maintainer="Ank"
 
-COPY ./init_postgresql.sh /docker-entrypoint-initdb.d/
-COPY ./postgresql.conf /opt/postgresql.conf
-COPY docker-healthcheck /usr/local/bin/
+COPY ./postgres/init_postgresql.sh /docker-entrypoint-initdb.d/
+COPY ./postgres/postgresql.conf /opt/postgresql.conf
+COPY ./postgres/docker-healthcheck /usr/local/bin/
 
 HEALTHCHECK CMD ["docker-healthcheck"]
 ENTRYPOINT ["docker-entrypoint.sh"]
