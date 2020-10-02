@@ -2,7 +2,7 @@ FROM alpine:3.9
 LABEL maintainer="Ank"
 
 ENV JAVA_HOME="/usr/lib/jvm/default-jvm"
-ENV MEM_OPTS="-Xmx2g -Xms1g"
+ENV MEM_OPTS="-Xmx128m -Xms128m"
 ENV GRADLE_OPTS="-server $MEM_OPTS -XX:+UseParallelGC -XX:SoftRefLRUPolicyMSPerMB=1 -XX:MaxHeapFreeRatio=99 -Dorg.gradle.daemon=false"
 ENV JAVA_OPTS="$JAVA_OPTS -Dorg.apache.el.parser.SKIP_IDENTIFIER_CHECK=true $MEM_OPTS -XX:+UseParallelGC -XX:SoftRefLRUPolicyMSPerMB=1 -XX:MaxHeapFreeRatio=99"
 ENV TOMCAT_MAJOR=8 \
