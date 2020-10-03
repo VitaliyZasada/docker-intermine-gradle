@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ok=$(wget --server-response http://localhost:9999 2>&1 | awk '/^  HTTP/{print $2}')
+ok=$(wget --server-response http://10.0.11.11:9999/biotestmine/ 2>&1 | awk '/^  HTTP/{print $2}')
 
 if [[ "$ok" != "200" ]]; then
                 echo Something wrong with your server, please check logs
